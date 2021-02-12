@@ -8,11 +8,6 @@ header{
   padding: 40px;
 }
 
-.header-link{
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
 h1{
   margin-bottom: 10px;
   margin: 0 0 0 4px;
@@ -31,4 +26,13 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.header-link{
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.placeholder{
+  padding-left: 45px;
 }

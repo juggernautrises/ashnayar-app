@@ -3,14 +3,10 @@ import React from 'react'
 
 
 const Link = ({icon, width, height, target, url}) => {
-    
     return (
             <a href={url} target={target} className="header-link">
                 <img src={icon} width={width} height={height}></img>
             </a>
-
-
-        
     )
 }
 
@@ -20,12 +16,12 @@ Link.propTypes = {
     target: PropTypes.string
   };
   
-  Link.defaultProps = {
+Link.defaultProps = {
     width: 40,
     height: 40,
     target: "_blank"
-
 };
+
 const Links = () => {
     return (
         <div>
