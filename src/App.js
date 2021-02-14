@@ -6,7 +6,7 @@ function App() {
     <div className='container'>
       <Header/>
       <div className="placeholder">
-        WIP. Click here to follow the progress on this site -> [ <a href="http://runningcycles.wordpress.com">Running Cycles</a> ]
+        WIP. Click here to follow the progress on this site -> [ <a href="http://recoveryride.wordpress.com">Recovery Ride</a> ]
       </div>
     </div>
     
