@@ -4,62 +4,6 @@ import Spinner from 'react-bootstrap/Spinner'
 
 import {meters_to_miles, format_date} from '../util/misc'
 
-class AthleteComponent extends React.Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            error: null,
-            isRecentLoaded: false,
-            data: {}
-        };
-    }
-
-    componentDidMount(){
-        fetch("http://127.0.0.1:8000/api/v1/recent/",{
-            method: 'GET',
-            headers:{
-                'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE2MzQyMDcwLCJqdGkiOiJhNDZlZTVkNWNjMjg0NTE1YmM0ODU4ZmUwZDNjNDQxYyIsInVzZXJfaWQiOjJ9.3Y6snDYVI6cxXWU7YXIl-gTUFAFG9oh_G90LSaxICDs'
-            }
-        })
-        .then(res => res.json())
-        .then(
-            (result) =>{
-                this.setState({
-                    isLoaded: true,
-                    data: result
-                });
-            },
-            (error) =>{
-                this.setState({
-                    isLoaded: false,
-                    error
-                });
-            }
-        )
-    }
-
-    render(){
-        const { error, isLoaded} = this.state;
-        if (error){
-            return <div>{JSON.stringify(error, null, 2)}</div>
-        } else if (!isLoaded){
-            return   (
-                <div class="athlete-container">
-                    <div className="profile-container">
-                        <Spinner animation="grow" variant="primary" />
-                    </div>
-                    <div className="goals-container">
-                        <Spinner animation="grow" variant="primary" />
-                    </div>
-
-                </div>)
-        } else {
-            return(
-                <Athlete/>
-            );
-        }
-    }
-}
 const Athlete = () => {
 
     return (
