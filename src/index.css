@@ -15,12 +15,16 @@ h1{
 }
 
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  /* margin: 0; */
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #212529;
+  color: white;
+
+
 }
 
 code {
@@ -35,4 +39,85 @@ code {
 
 .placeholder{
   padding-left: 45px;
+  padding-top: 30px;
+}
+
+.content-container{
+	width:90%;
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: 30%;
+}
+
+.api-status{
+  padding-left: 15px;
+}
+.athlete-container{
+  display: flex;
+}
+
+.profile-container{
+  border: 1px blue solid;
+  border-radius: 10px;
+  flex: 1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align: center;
+}
+
+/* .profile{
+  border: 1px blue solid;
+  border-radius: 10px;
+  padding: 10px;
+  flex: 1;
+} */
+
+.profile-image{
+	padding-top: 10px;
+	padding-bottom: 5px;
+}
+
+.goals-container{
+  border: 1px blue solid;
+  border-radius: 10px;
+  flex: 1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+}
+
+.goals-title{
+  color:lightgreen;
+  font-weight: bold;
+
+}
+.goal-stats{
+  width: 90%;
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+  top: 30%;
+
+}
+
+.goal-progress{
+  font-size: 14px;;
+}
+
+.ride-goal{
+  padding-bottom: 15px;
+}
+
+.stats-container{
+	text-align: center;
+	padding-bottom: 5px;
+}
+
+.peaks {
+  color:darkgoldenrod;
+  font-weight: bold;
 }
