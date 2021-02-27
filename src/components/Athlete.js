@@ -1,7 +1,8 @@
 import React from 'react'
-import Goals from './Goals'
+
 import Spinner from 'react-bootstrap/Spinner'
 
+import Goals from './Goals'
 import {meters_to_miles, format_date} from '../util/misc'
 
 const Athlete = () => {

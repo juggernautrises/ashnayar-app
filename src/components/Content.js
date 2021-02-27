@@ -1,4 +1,5 @@
 import React from 'react'
+
 import{Athlete} from './Athlete'
 
 const Content = () => {

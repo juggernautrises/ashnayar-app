@@ -1,7 +1,16 @@
+import ReactGA from 'react-ga';
+import {useEffect} from 'react'
+
 import Content from './components/Content'
 import Header from './components/Header'
 
-function App() {
+ReactGA.initialize(process.env.REACT_APP_GA_ID);
+
+const App = () => {
+  useEffect(() => {
+    ReactGA.pageview(window.location + window.location.search);
+  })
+
   return (
     <div className='container'>
       <Header/>

@@ -1,9 +1,11 @@
+import PropTypes from 'prop-types';
 import React from 'react'
+
 import { faBicycle, faRunning } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import ProgressBar from 'react-bootstrap/ProgressBar'
 import Spinner from 'react-bootstrap/Spinner'
-import PropTypes from 'prop-types';
+
 
 
 class Goals extends React.Component{
@@ -93,7 +95,6 @@ export default Goals
 
 
 export const RunGoal = ({target, ytd, progress}) => {
-    console.log(target);
     return (
         <div className="run-goal">
             <FontAwesomeIcon icon={faRunning} />
