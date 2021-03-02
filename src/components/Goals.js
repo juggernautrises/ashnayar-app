@@ -62,7 +62,9 @@ class Goals extends React.Component{
             return   (
             <div className="goals-container">
                 <div className="goal-stats">
-                    <Spinner animation="grow" variant="primary" />
+                    <div className="goal-spinner">
+                        <Spinner animation="grow" variant="primary" />
+                    </div>
                 </div>
             </div>
             )
@@ -78,15 +80,6 @@ class Goals extends React.Component{
             );
         }
     }
-
-    // return (
-    //     <div className="goals-container">
-    //         <div className="goal-stats">
-    //             <RideGoal/>
-    //             <RunGoal/>
-    //         </div>
-    //     </div>
-    // )
 }
 
 

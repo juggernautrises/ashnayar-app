@@ -5,22 +5,22 @@ import Spinner from 'react-bootstrap/Spinner'
 import Goals from './Goals'
 import {meters_to_miles, format_date} from '../util/misc'
 
-const Athlete = () => {
-
+const Athlete = (props) => {
     return (
-        <div class="athlete-container">
-            <AthleteProfile/>
-            <Goals />
+        <div className="athlete-container">
+            <AthleteProfile update_stats_loaded={props.update_stats_loaded}
+            update_image_loaded={props.update_image_loaded} />
+            <Goals update_goal_loaded={props.update_goal_loaded} />
         </div>
     )
 }
 
-export const AthleteProfile = () => {
+export const AthleteProfile = (props) => {
     return (
         <div className="profile-container">
             <div className="profile">
-                <AthleteImage />
-                <AthleteStats />
+                <AthleteImage update_image_loaded={props.update_image_loaded}/>
+                <AthleteStats update_stats_loaded={props.update_stats_loaded}/>
             </div>
         </div>
     )
@@ -49,12 +49,14 @@ class AthleteImage extends React.Component{
         .then(res => res.json())
         .then(
             (result) =>{
+                this.props.update_image_loaded({value:true})
                 this.setState({
                     isLoaded: true,
                     profile: result
                 });
             },
             (error) =>{
+                this.props.update_image_loaded({value:false})
                 this.setState({
                     isLoaded: false,
                     error
@@ -62,6 +64,7 @@ class AthleteImage extends React.Component{
             }
         )
     }
+
     render(){
         const { error, isLoaded, profile } = this.state;
         if (error){
@@ -103,12 +106,14 @@ class AthleteStats extends React.Component{
         .then(res => res.json())
         .then(
             (result) =>{
+                this.props.update_stats_loaded({value:true})
                 this.setState({
                     isLoaded: true,
                     stats: result
                 });
             },
             (error) =>{
+                this.props.update_stats_loaded({value:false})
                 this.setState({
                     isLoaded: false,
                     error
@@ -122,7 +127,7 @@ class AthleteStats extends React.Component{
             return <div>Fancy stats should be here!</div>
         } else if (!isLoaded){
             return(
-                <div class="stats-container">
+                <div className="stats-container">
                     <Spinner animation="grow" variant="primary" />
                 </div>
             )
@@ -146,7 +151,7 @@ class AthleteStats extends React.Component{
 
 export const AthleteLastRide = ({distance, date}) => {
     return (
-        <div class="stats">
+        <div className="stats">
             Last Ride: {meters_to_miles(distance)} miles on {format_date(date)}
         </div>
     )
@@ -154,7 +159,7 @@ export const AthleteLastRide = ({distance, date}) => {
 
 export const AthleteLastRun = ({distance, date}) => {
     return (
-        <div class="stats">
+        <div className="stats">
             Last Run: {meters_to_miles(distance)} miles on {format_date(date)}
         </div>
     )
@@ -162,7 +167,7 @@ export const AthleteLastRun = ({distance, date}) => {
 
 export const AthleteLongestRide = ({distance, date}) => {
     return (
-        <div class="stats">
+        <div className="stats">
             Longest Ride: {meters_to_miles(distance)} miles on {format_date(date)}
         </div>
     )
@@ -170,7 +175,7 @@ export const AthleteLongestRide = ({distance, date}) => {
 
 export const AthleteLongestRun = ({distance, date}) => {
     return (
-        <div class="stats">
+        <div className="stats">
             Longest Run: {meters_to_miles(distance)} miles on {format_date(date)}
         </div>
     )

@@ -1,26 +1,62 @@
 import ReactGA from 'react-ga';
-import {useEffect} from 'react'
 
-import Content from './components/Content'
+import React from 'react'
 import Header from './components/Header'
+import Content from './components/Content'
+
+import { faSmileBeam } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 ReactGA.initialize(process.env.REACT_APP_GA_ID);
+class App extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+        ImageLoaded: false,
+        StatsLoaded: false,
+        GoalLoaded: false,
+    };
 
-const App = () => {
-  useEffect(() => {
+  }
+
+  componentDidMount(){
     ReactGA.pageview(window.location + window.location.search);
-  })
+  }
 
-  return (
-    <div className='container'>
-      <Header/>
-      <Content/>
-      <div className="placeholder">
-        WIP. Click here to follow the progress on this site -> [ <a href="http://recoveryride.wordpress.com">Recovery Ride</a> ]
-      </div>
-    </div>
-    
-  );
+  update_image_loaded = ({value}) => {
+    this.setState({ImageLoaded: value})
+  }
+
+  update_stats_loaded = ({value}) => {
+    this.setState({StatsLoaded: value})
+  }
+
+  update_goal_loaded = ({value}) => {
+    this.setState({GoalLoaded: value})
+  }
+
+  current_state = () => {
+    if (this.state.ImageLoaded ){
+        return <div></div>
+    }
+    else{
+        return <div>The stats are hosted on Heroku and sometimes the app goes to sleep. Please be patient while they load! <FontAwesomeIcon icon={faSmileBeam} />
+        </div>
+    }
+
+  }
+  render = () =>{
+    return (
+        <div className='container'>
+          <Header/>
+          <Content update_stats_loaded={this.update_stats_loaded} update_goal_loaded={this.update_goal_loaded} update_image_loaded={this.update_image_loaded} />
+          <div className="api-status">{this.current_state()}</div>
+          <div className="placeholder">
+            WIP. Click here to follow the progress on this site -> [ <a href="http://recoveryride.wordpress.com">Recovery Ride</a> ]
+          </div>
+        </div>
+      )
+  }
 }
 
 export default App;

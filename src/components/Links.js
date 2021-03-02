@@ -28,7 +28,7 @@ Link.defaultProps = {
 const Links = () => {
     return (
         <div>
-            <Link icon="/images/LI-In-Bug.png" width="45"  url="https://www.linkedin.com/in/ash-nayar/"/>
+            <Link icon="/images/LI-In-Bug.png" width={45}  url="https://www.linkedin.com/in/ash-nayar/"/>
             <Link icon="/images/GitHub-Mark-Light-64px.png" url="http://github.com/juggernautrises"/>
             <Link icon="/images/imdb.png" url="https://www.imdb.com/name/nm2363452/"/>
         </div>

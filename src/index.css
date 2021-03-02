@@ -53,6 +53,12 @@ code {
 
 .api-status{
   padding-left: 15px;
+  padding-right: 5px;
+  font-size: 10px;
+  width: 90%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .athlete-container{
   display: flex;
@@ -106,6 +112,10 @@ code {
 
 .goal-progress{
   font-size: 14px;;
+}
+
+.goal-spinner{
+  text-align: center;
 }
 
 .ride-goal{
