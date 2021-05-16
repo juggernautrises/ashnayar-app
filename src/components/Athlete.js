@@ -37,14 +37,10 @@ class AthleteImage extends React.Component{
         };
     }
     componentDidMount(){
-        var url_token = 'Bearer ' + process.env.REACT_APP_ATHLETE_TOKEN
         var url = process.env.REACT_APP_ATHLETE_URL+"/athlete/"
 
         fetch(url,{
-            method: 'GET',
-            headers:{
-                'Authorization': url_token
-            }
+            method: 'GET'
         })
         .then(res => res.json())
         .then(
@@ -94,14 +90,10 @@ class AthleteStats extends React.Component{
     }
 
     componentDidMount(){
-        var url_token = 'Bearer ' + process.env.REACT_APP_ATHLETE_TOKEN
         var url = process.env.REACT_APP_ATHLETE_URL+"/recent/"
 
         fetch(url,{
-            method: 'GET',
-            headers:{
-                'Authorization': url_token
-            }
+            method: 'GET'
         })
         .then(res => res.json())
         .then(

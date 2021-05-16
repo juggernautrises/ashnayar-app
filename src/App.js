@@ -40,7 +40,7 @@ class App extends React.Component{
         return <div></div>
     }
     else{
-        return <div>The stats are hosted on Heroku and sometimes the app goes to sleep. Please be patient while they load! <FontAwesomeIcon icon={faSmileBeam} />
+        return <div>Stats are still a work in progress. Please be patient while they load! <FontAwesomeIcon icon={faSmileBeam} />
         </div>
     }
 
