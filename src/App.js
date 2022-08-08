@@ -51,9 +51,6 @@ class App extends React.Component{
           <Header/>
           <Content update_stats_loaded={this.update_stats_loaded} update_goal_loaded={this.update_goal_loaded} update_image_loaded={this.update_image_loaded} />
           <div className="api-status">{this.current_state()}</div>
-          <div className="placeholder">
-            WIP. Click here to follow the progress on this site -> [ <a href="http://recoveryride.wordpress.com">Recovery Ride</a> ]
-          </div>
         </div>
       )
   }
