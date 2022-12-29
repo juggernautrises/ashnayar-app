@@ -4,11 +4,11 @@ html {
 
 }
 
-header{
+header {
   padding: 40px;
 }
 
-h1{
+h1 {
   margin-bottom: 10px;
   margin: 0 0 0 4px;
   padding-bottom: 15px;
@@ -32,26 +32,34 @@ code {
     monospace;
 }
 
-.header-link{
+.header-link {
   padding-left: 5px;
   padding-right: 5px;
 }
 
-.placeholder{
+.placeholder {
   padding-left: 45px;
   padding-top: 30px;
 }
 
-.content-container{
-	width:90%;
-	display: block;
+.simple-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* height: 100vh; */
+
+}
+
+.content-container {
+  width: 90%;
+  display: block;
   margin-left: auto;
   margin-right: auto;
   position: relative;
   top: 30%;
 }
 
-.api-status{
+.api-status {
   padding-left: 15px;
   padding-right: 5px;
   font-size: 10px;
@@ -60,17 +68,18 @@ code {
   margin-left: auto;
   margin-right: auto;
 }
-.athlete-container{
+
+.athlete-container {
   display: flex;
 }
 
-.profile-container{
+.profile-container {
   border: 1px blue solid;
   border-radius: 10px;
   flex: 1;
-  display:flex;
-  justify-content:center;
-  align-items:center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
@@ -81,53 +90,55 @@ code {
   flex: 1;
 } */
 
-.profile-image{
-	padding-top: 10px;
-	padding-bottom: 5px;
+.profile-image {
+  padding-top: 10px;
+  padding-bottom: 5px;
 }
 
-.goals-container{
+.goals-container {
   border: 1px blue solid;
   border-radius: 10px;
   flex: 1;
-  display:flex;
-  justify-content:center;
-  align-items:center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 }
 
-.goals-title{
-  color:lightgreen;
+.goals-title {
+  color: lightgreen;
   font-weight: bold;
 
 }
-.goal-stats{
+
+.goal-stats {
   width: 90%;
-	display: block;
+  display: block;
   margin-left: auto;
   margin-right: auto;
   top: 30%;
 
 }
 
-.goal-progress{
-  font-size: 14px;;
+.goal-progress {
+  font-size: 14px;
+  ;
 }
 
-.goal-spinner{
+.goal-spinner {
   text-align: center;
 }
 
-.ride-goal{
+.ride-goal {
   padding-bottom: 15px;
 }
 
-.stats-container{
-	text-align: center;
-	padding-bottom: 5px;
+.stats-container {
+  text-align: center;
+  padding-bottom: 5px;
 }
 
 .peaks {
-  color:darkgoldenrod;
+  color: darkgoldenrod;
   font-weight: bold;
 }
